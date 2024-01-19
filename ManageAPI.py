@@ -14,8 +14,23 @@ class ManagerAPI:
     def headers(self):
         return self.__headers
 
+    def get_user(self):
+        user = make_http_request(self.base_url + "user/", self.headers)
+        if user:
+            return user
+        return None
+
     def get_workspaces(self):
         workspaces = make_http_request(self.base_url + "workspaces/", self.headers)
+        if workspaces and len(workspaces) > 0:
+            return workspaces
+        return None
+
+    def get_entries(self, user_id, workspace_id):
+        workspaces = make_http_request(
+            self.base_url + f"workspaces/{workspace_id}/user/{user_id}/time-entries",
+            self.headers,
+        )
         if workspaces and len(workspaces) > 0:
             return workspaces
         return None

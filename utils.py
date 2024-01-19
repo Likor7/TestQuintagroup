@@ -1,6 +1,7 @@
 import requests
 import sys
 from requests.exceptions import HTTPError
+from datetime import datetime
 
 
 def make_http_request(url, headers):
@@ -14,3 +15,7 @@ def make_http_request(url, headers):
     except Exception as err:
         print(f"Other error occurred: {err}")
         sys.exit(1)
+
+
+def parse_iso_datetime(date_string):
+    return datetime.fromisoformat(date_string.replace("Z", "+00:00"))
