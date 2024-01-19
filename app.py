@@ -33,9 +33,9 @@ if __name__ == "__main__":
             for project in projects:
                 print(f"Project Name: {project['name']}, Project ID: {project['id']}")
 
-            project_id = projects[0]["id"]
+            # project_id = projects[0]["id"]
             # If u have more than one project, you should uncomment this and comment the above statement
-            # project_id = input("Enter a project ID to fetch tasks: ")
+            project_id = input("Enter a project ID to fetch tasks: ")
 
             print("-------------")
             tasks = manager.get_tasks(workspace_id, project_id)

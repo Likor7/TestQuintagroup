@@ -15,14 +15,14 @@ class ManagerAPI:
         return self.__headers
 
     def get_workspaces(self):
-        workspaces = make_http_request(self.base_url + "/workspaces/", self.headers)
+        workspaces = make_http_request(self.base_url + "workspaces/", self.headers)
         if workspaces and len(workspaces) > 0:
             return workspaces
         return None
 
     def get_projects(self, workspace_id):
         projects = make_http_request(
-            self.base_url + f"/workspaces/{workspace_id}/projects", self.headers
+            self.base_url + f"workspaces/{workspace_id}/projects", self.headers
         )
         if projects and len(projects) > 0:
             return projects
