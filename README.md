@@ -47,4 +47,4 @@ docker-compose exec app /bin/bash
 python app.py
 ```
 
-## If want to choose your own workspace/project/task, you should uncomment the parts of code in app.py
+If want to choose your own workspace/project/task, you should uncomment the parts of code in app.py
